@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import Router from './Router';
 import './assets/style.css';
 import Header from './components/Common/Header';
-import Footer from './components/Common/Footer';
+// import Footer from './components/Common/Footer';
 import { getUser } from './reducks/users/selectors';
 import { fetchUserFromLocalStorage } from './reducks/users/operations';
 import { getSubtotal } from './reducks/carts/selectors';
+// import FloatingCartButton from './containers/FloatingCartButton';
 
 let pageUrl = window.location.toString();
 
@@ -25,9 +26,12 @@ function App() {
     }, []);
     return (
         <>
+
             <Header />
             <Router />
+            {/* <FloatingCartButton /> */}
             {/* {showFooter && <Footer price={subtotal} />} */}
+
         </>
     );
 }
