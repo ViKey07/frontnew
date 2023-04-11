@@ -9,7 +9,7 @@ var baseURL;
 //   baseURL = process.env.REACT_APP_API_BASE_URL;
 // } else
 // baseURL = "https://backend-eric.herokuapp.com/";
-baseURL = "http://127.0.0.1:8000/";
+baseURL = "http://127.0.0.1:8000/, https://backnew.vikey07.repl.co";
 
 
 
