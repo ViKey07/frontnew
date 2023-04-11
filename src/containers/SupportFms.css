@@ -1,0 +1,66 @@
+/* CSS for desktop screens */
+.my-component {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%;
+    max-width: 1200px; */
+    margin: 3em 1.5em 1.5em 2em;
+  }
+  
+  .left-image {
+    width: 25%;
+    height: auto;
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .s-head {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+  
+  .l-head {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+      border-bottom: 1px solid blue;
+      padding: 2%;
+  }
+  
+  .right-image {
+    width: 25%;
+    height: auto;
+  }
+  
+  /* CSS for mobile screens */
+  @media screen and (max-width: 767px) {
+    .my-component {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .left-image,
+    .right-image {
+      width: 50%;
+      text-align: center;
+    }
+  
+    .heading {
+      font-size: 1.5rem;
+    }
+  
+    .s-head {
+      font-size: 1.2rem;
+    }
+  
+    .l-head {
+      font-size: 2rem;
+    }
+  }
+  

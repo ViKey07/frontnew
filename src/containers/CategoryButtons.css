@@ -1,0 +1,243 @@
+.custom-category-buttons-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2%;
+  }
+  
+  .custom-category-1,
+  .custom-category-2,
+  .custom-category-3,
+  .custom-category-4 {
+    display: grid;
+  }
+
+  .custom-category-2-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 2%;
+  }
+  
+  .category-img {
+    width: 250px;
+  }
+
+  .custom-category-1:hover,
+  .custom-category-2:hover,
+  .custom-category-3:hover,
+  .custom-category-4:hover {
+    transition: transform 0.5s;
+    transform: scale(1.1);
+  }
+  
+  .c-b {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .category-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    padding: 0 0.3em;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .category-button:hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    padding: 0 0.3em;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color: maroon;
+    color: white;
+  }
+
+  .carousel button.arrow-next {
+    font-weight: bold;
+    }
+  
+  
+  @media (max-width: 768px) {
+    .custom-category-buttons-container {
+      flex-wrap: wrap;
+    }
+  
+    .custom-category-1,
+    .custom-category-2-3,
+    .custom-category-4 {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .custom-category-2-3 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .category-img {
+      width: 100%;
+      max-width: 250px;
+    }
+  
+    .c-b {
+      height: 10vh;
+    }
+  
+    .category-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  
+  
+  
+  /* .custom-category-buttons-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2%;
+  }
+
+  .custom-category-2,
+  .custom-category-3 {
+    /* display: grid; */
+   /* height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  
+  .category-img {
+    width: 250px;
+  }
+  
+  .custom-category-1:hover,
+  .custom-category-2:hover,
+  .custom-category-3:hover,
+  .custom-category-4:hover {
+    transition: transform 0.5s;
+    transform: scale(1.1);
+  }
+  
+  .category-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.3em;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .custom-category-2 .category-button,
+.custom-category-3 .category-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  padding: 0 0.3em;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 20px;
+}
+  
+  .custom-category-1:hover .category-button,
+  .custom-category-2:hover .category-button,
+  .custom-category-3:hover .category-button,
+  .custom-category-4:hover .category-button {
+    opacity: 1;
+  }
+  
+  .category-button:hover {
+    background-color: maroon;
+  }
+  
+  .carousel button.arrow-next {
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-category-buttons-container {
+      flex-wrap: wrap;
+    }
+  
+    .custom-category-1,
+    .custom-category-2-3,
+    .custom-category-4 {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .custom-category-2-3 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .category-img {
+      width: 100%;
+      max-width: 250px;
+    }
+  
+    .c-b {
+      height: 10vh;
+    }
+  
+    .category-button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.3em;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      font-weight: 700;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+  
+    .custom-category-1:hover .category-button,
+    .custom-category-2:hover .category-button,
+    .custom-category-3:hover .category-button,
+    .custom-category-4:hover .category-button {
+      opacity: 1;
+    }
+  
+    .category-button:hover {
+      background-color: maroon;
+    }
+  }
+   */
+  

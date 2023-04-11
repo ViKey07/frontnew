@@ -1,0 +1,103 @@
+.newsletter-sign-up {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaeaea;
+    padding: 20px;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+  
+  label {
+    margin-right: 10px;
+    width: 52%;
+    text-align: center;
+  }
+  
+  input {
+      padding: 10px;
+      border: none;
+      width: 100%;
+      max-width: 300px;
+  }
+  
+  button.submit-button {
+    padding: 10px 20px;
+      border: none;
+      background-color: #3f51b5;
+      color: white;
+      cursor: pointer;
+      width: 30%;
+  }
+  
+  button.submit-button:hover {
+    background-color: maroon;
+  }
+  
+  button.google-sign-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  button.google-sign-in:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .google-icon-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .google-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .google-button-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+  
+  .google-button {
+    background: white !important;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .newsletter-sign-up {
+      flex-direction: column;
+    }
+  
+    .input-container {
+        margin-bottom: 1em;
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    button.submit-button {
+      margin-left: 0;
+      width: 40%;
+    }
+  
+    button.google-sign-in {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+  
