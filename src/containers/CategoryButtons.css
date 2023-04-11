@@ -105,15 +105,15 @@
       top: -40px;
     }
   
-    .category-button {
+    /* .category-button {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-    }
+    } */
 
     .category-button:hover {
-      display: none;
+      position: absolute;
     }
   }
 
