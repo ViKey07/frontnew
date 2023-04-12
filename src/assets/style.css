@@ -108,6 +108,10 @@ nav {
   font-weight: bold;
 }
 
+.header-cart-img {
+  width: 30px;
+}
+
 /* Media Queries */
 @media screen and (max-width: 768px) {
   /* header {
@@ -959,6 +963,14 @@ transform: scale(1.2);
 .circle img {
   height: 80px;
   padding: 20px 17px;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  height: 35vh;
+  align-items: center;
+  font-size: x-large;
 }
 
 button.number {

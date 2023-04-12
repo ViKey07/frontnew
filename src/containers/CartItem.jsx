@@ -65,8 +65,14 @@ const CartItem = ({ cart, quantity, cartId }) => {
             </button>
         </>
     );
+
+    
 };
 
 export default CartItem;
+
+
+
+
 
 

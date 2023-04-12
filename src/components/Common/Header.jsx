@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { signOut } from '../../reducks/users/operations';
 import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
-import cart from '../../assets/img/cart.svg';
+import cart from '../../assets/img/cart_b(5).png';
 import logo from '../../assets/img/blue_logo.png';
 import user from '../../assets/img/user.svg';
 export default function Header() {
@@ -50,7 +50,7 @@ export default function Header() {
                     {checkUser && (
                         <a href="Cart">
                             {' '}
-                            <img src={cart} alt="" />
+                            <img className='header-cart-img' src={cart} alt="" />
                         </a>
                     )}
                 </nav>
