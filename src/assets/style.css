@@ -808,6 +808,8 @@ div.item-price {
   font-weight: 500;
 }
 
+
+
 @media (max-width: 768px) {
   .n-l {
     font-size: 2rem;
@@ -858,6 +860,15 @@ div.item-price {
   color: maroon;
   font-weight: 600;
   font-size: larger;
+}
+
+@media (max-width: 480px) {
+  .cat-links {
+    display: none;
+    /* flex-direction: column; */
+  }
+
+  
 }
 
 
