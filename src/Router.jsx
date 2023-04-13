@@ -6,6 +6,7 @@ import Shipping from './containers/Shipping';
 import Signin from './containers/Signin';
 import SignUp from './containers/SignUp';
 import ThankYou from './containers/ThankYou';
+import ItemsPage from '../src/containers/ItemsPage';
 
 
 
@@ -15,6 +16,7 @@ const Router = () => {
         <>
             <Switch>
                 <Route exact path={'/'} component={Home} />
+                <Route path="/items" component={ItemsPage} />
                 <Route exact path={'/signup'} component={SignUp} />
                 <Route exact path={'/signin'} component={Signin} />
                 <Route exact path={'/cart'} component={Cart} />

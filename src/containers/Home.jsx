@@ -13,6 +13,8 @@ import CImg2 from '../assets/img/clg_img2.png';
 import CImg3 from '../assets/img/clg_img3.png';
 import NewsLetter from './SignLetter.jsx';
 import ServiceBar from './ServiceBar';
+import ItemsPage from './ItemsPage';
+import ProductsSec from './ProductsSec';
 // import Footer from './components/Common/Footer.jsx';
 // import PageFooter from '../components/Common/Footer';
 
@@ -32,7 +34,8 @@ const Home = ({ showFooter, subtotal }) => {
     }, []);
 
     function handleShopNowClick() {
-        itemRef.current.scrollIntoView({ behavior: 'smooth' });
+        // itemRef.current.scrollIntoView({ behavior: 'smooth' });
+        window.location.href = '/items';
     }
 
     return (
@@ -48,7 +51,7 @@ const Home = ({ showFooter, subtotal }) => {
 
             <CustomCategoryButtons handleShopNowClick={handleShopNowClick} />
 
-            <div className="product-heading">
+            {/* <div className="product-heading">
                 <h2 className='product-list'>Product-List</h2>
             </div>
             <section className="item-container" ref={itemRef}>
@@ -60,10 +63,37 @@ const Home = ({ showFooter, subtotal }) => {
                             </div>
                         ))}
                 </div>
-            </section>
+            </section> */}
 
+            {/* <ItemsPage /> */}
+
+            <div className="product-heading">
+                <h2 className='product-list'>Best Selling</h2>
+            </div>
+
+            <ProductsSec />
 
             <SupportFms handleShopNowClick={handleShopNowClick} />
+
+            <div className="product-heading">
+                <h2 className='product-list'>Best Sell</h2>
+            </div>
+
+            <div className="cat-links">
+                {/* <ul className="navbar-links"> */}
+                    <li><a className='nav-l-2' href="/items">All</a></li>
+                    <li><a className='nav-l-2' href="/items">Apparel</a></li>
+                    <li><a className='nav-l-2' href="/items">Stationary</a></li>
+                    <li><a className='nav-l-2' href="/items">Mugs</a></li>
+                    <li><a className='nav-l-2' href="/items">Bottles</a></li>
+                    <li><a className='nav-l-2' href="/items">Rings</a></li>
+                    <li><a className='nav-l-2-b' href="/items">Bands</a></li>
+                {/* </ul> */}
+            </div>
+
+            <ProductsSec />
+
+            {/* <ProductsSec /> */}
 
             <ServiceBar />
 

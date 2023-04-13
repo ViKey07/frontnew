@@ -104,6 +104,19 @@ const Cart = ({ showFooter, subtotal }) => {
                 {cartIsEmpty ? (
                     <p className='empty-cart'>Your cart is empty.</p>
                 ) : (
+                    <>
+                    <div className="cart-item-img-name-head">
+                        <div className="cart-img-i-n">
+                            <p className="cart-t">Item</p>
+                        </div>
+
+                        <div className="cart-i-info">
+                            <p className="cart-s">Size</p>
+                            <p className="cart-c">Color</p>
+                            <p className="cart-p">Price</p>
+                            <p className="cart-q">Quantity</p>
+                        </div>
+                    </div>
                     <div class="images">
                         <ul class="menu">
                             {items &&
@@ -118,10 +131,12 @@ const Cart = ({ showFooter, subtotal }) => {
                                             color={cart.color}
                                         />
                                     </li>
+                                    
                                 ))
                             }
                         </ul>
                     </div>
+                    </>
                 )}
             </section>
             {!cartIsEmpty && <PageFooter showFooter={showFooter} subtotal={subtotal} />}
