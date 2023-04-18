@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-// import { getUser } from '../reducks/users/selectors';
+import { useSelector,useDispatch } from 'react-redux';
+import { getUser } from '../reducks/users/selectors';
 import { push } from 'connected-react-router';
 
 const ThankYou = () => {
-    // const selector = useSelector(state => state);
+    const selector = useSelector(state => state);
     const dispatch = useDispatch();
     const user = JSON.parse(localStorage.getItem('LOGIN_USER_KEY'));
     useEffect(() => {
         console.log(user);
-    }, [user]);
+    }, []);
     return (
         <div>
             <div class="box">
@@ -26,7 +26,9 @@ const ThankYou = () => {
             </div>
 
             <div class="backhome">
-                <button className='back-btn' onClick={() => dispatch(push('/'))}>Back to Home</button>
+                <a href="">
+                    <button className='back-btn' onClick={() => dispatch(push('/'))}>Back to Home</button>
+                </a>
             </div>
         </div>
     );

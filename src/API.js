@@ -9,10 +9,9 @@ var baseURL;
 // ) {
 //   baseURL = process.env.REACT_APP_API_BASE_URL;
 // } else
-// baseURL = "http://127.0.0.1:8000/";
-baseURL = "https://newfmsback.vikey07.repl.co/";
-
-const API_URL = 'http://127.0.0.1:8000/';
+// baseURL = "https://backend-eric.herokuapp.com/";
+// baseURL = "https://backnew.vikey07.repl.co";
+baseURL = "http://localhost:8000/";
 
 
 
@@ -147,6 +146,22 @@ export default class API {
             });
         return savedCart;
     };
+
+
+    // updateCart = async (cartId, size, color) => {
+    //     const savedCart = await api
+    //       .put(`/carts/${cartId}/update/`, {
+    //         size: size,
+    //         color: color
+    //       })
+    //       .then(response => {
+    //         return response.data;
+    //       })
+    //       .catch(error => {
+    //         throw new Error(error);
+    //       });
+    //     return savedCart;
+    //   };
       
 
     deleteCarts = async cart_id => {
@@ -176,6 +191,25 @@ export default class API {
             });
         return order;
     };
+
+    // orderAdd = async (params = {}) => {
+    //     const { item, quantity, size, color } = params; // assuming you have access to size and color information
+    
+    //     const order = await api
+    //         .post('/orders/add/', {
+    //             item: item.id,
+    //             quantity: quantity,
+    //             size: size, // adding size property
+    //             color: color // adding color property
+    //         })
+    //         .then(response => {
+    //             return response.data;
+    //         })
+    //         .catch(error => {
+    //             throw new Error(error);
+    //         });
+    //     return order;
+    // };
     
 
     ///////////////////////////////////////////
@@ -221,37 +255,8 @@ export default class API {
             });
         return response;
     };
-
-    
 }
-  
 
-export const createOrder = async (amount) => {
-    const response = await fetch(`${API_URL}/orders/create_order/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'X-CSRFToken': getCookie('csrftoken'),  // replace with your own CSRF token getter function
-      },
-      body: new URLSearchParams({
-        'amount': amount,
-      }).toString(),
-    });
-    const data = await response.json();
-    return data.order_id;
-  };
+
   
-  // helper function to get the CSRF token from cookies
-  const getCookie = (name) => {
-    if (!document.cookie) {
-      return null;
-    }
-    const xsrfCookies = document.cookie.split(';')
-      .map(c => c.trim())
-      .filter(c => c.startsWith(name + '='));
-    if (xsrfCookies.length === 0) {
-      return null;
-    }
-    return decodeURIComponent(xsrfCookies[0].split('=')[1]);
-  };
   

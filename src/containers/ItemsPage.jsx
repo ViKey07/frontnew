@@ -19,7 +19,7 @@ function ItemsPage() {
             dispatch(fetchCarts());
             console.log(items);
         }
-    }, [dispatch, items]);
+    }, []);
 
 
   return (

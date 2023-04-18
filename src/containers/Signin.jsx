@@ -37,7 +37,7 @@ const Signin = () => {
                         <span onClick={closeButton}>
                             <a href="/">
                                 {' '}
-                                <img src={CrossX} class="close" alt=''/>{' '}
+                                <img src={CrossX} class="close" />{' '}
                             </a>
                         </span>
                     </div>

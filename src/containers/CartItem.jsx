@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { increaseCart, decreaseCart } from '../reducks/carts/operations';
-import { getCarts } from '../reducks/carts/selectors';
-// import Gift from '../../src/assets/img/Asset 312.png';
+import { addCart, increaseCart, decreaseCart } from '../reducks/carts/operations';
+import { getCarts, getSubtotal } from '../reducks/carts/selectors';
 // import Item from '../components/Common/Item'
 
 const CartItem = ({ cart, quantity, cartId }) => {
     const selector = useSelector(state => state);
     const dispatch = useDispatch();
     const carts = getCarts(selector);
-    // const subtotal = getSubtotal(selector);
+    const subtotal = getSubtotal(selector);
     const [selectedSize, setSelectedSize] = useState(cart.size);
     const [selectedColor, setSelectedColor] = useState(cart.color);
 
@@ -24,7 +23,7 @@ const CartItem = ({ cart, quantity, cartId }) => {
         console.log(cart.image);
         console.log(cart);
         console.log(carts);
-    }, [cart, carts]);
+    }, []);
 
     const handleSizeChange = (event) => {
         setSelectedSize(event.target.value);

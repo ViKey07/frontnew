@@ -5,10 +5,10 @@ import {
   increaseCartAction,
   decreaseCartAction,
 } from "./actions";
-// import { push } from "connected-react-router";
+import { push } from "connected-react-router";
 
 const api = new API();
-// const CARTS_KEY = "CARTS_KEY";
+const CARTS_KEY = "CARTS_KEY";
 
 export const fetchCarts = () => {
   return async (dispatch) => {

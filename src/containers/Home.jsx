@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import Item from '../components/Common/Item';
 import { fetchItems } from '../reducks/items/operations';
 import { getItems } from '../reducks/items/selectors';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,18 +13,18 @@ import CImg2 from '../assets/img/clg_img2.png';
 import CImg3 from '../assets/img/clg_img3.png';
 import NewsLetter from './SignLetter.jsx';
 import ServiceBar from './ServiceBar';
+import ItemsPage from './ItemsPage';
 import ProductsSec from './ProductsSec';
-// import Welcome from './Welcome';
-// import Item from '../components/Common/Item';
-// import ItemsPage from './ItemsPage';
-
+import FMSLOGO from '../assets/img/FMSLOGO.png'
+// import Footer from './components/Common/Footer.jsx';
+// import PageFooter from '../components/Common/Footer';
 
 
 const Home = ({ showFooter, subtotal }) => {
     const selector = useSelector(state => state);
     const dispatch = useDispatch();
     const items = getItems(selector);
-    // const itemRef = useRef(null);
+    const itemRef = useRef(null);
 
     useEffect(() => {
         dispatch(fetchItems());
@@ -31,7 +32,7 @@ const Home = ({ showFooter, subtotal }) => {
             dispatch(fetchCarts());
             console.log(items);
         }
-    }, [dispatch, items]);
+    }, []);
 
     function handleShopNowClick() {
         // itemRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -40,15 +41,29 @@ const Home = ({ showFooter, subtotal }) => {
 
     return (
         <>
-            {/* <Welcome /> */}
             <section class="main-image">
-                <img src={MainImage} alt="main-img" />
-                <div className="shop-btn">
-                    <button className='shop-now' onClick={handleShopNowClick}>Shop Now</button>
+                <div className="home-images">
+                    <div className="home-logo-sec">
+                        <img className='home-fms-logo' src={FMSLOGO} alt="" />
+                    </div>
+
+                    <div className="offer">
+                        <img className='home-offer-img' src={MainImage} alt="main-img" />
+                        <div className="shop-btn">
+                            <button className='shop-now' onClick={handleShopNowClick}>Shop Now</button>
+                        </div>
+                    </div>
                 </div>
+                
             </section>
 
             <Carousel />
+
+            
+
+            <div className="product-heading">
+                <h2 className='product-list'>Categories</h2>
+            </div>
 
             <CustomCategoryButtons handleShopNowClick={handleShopNowClick} />
 
@@ -56,14 +71,29 @@ const Home = ({ showFooter, subtotal }) => {
                 <h2 className='product-list'>Best Selling</h2>
             </div>
 
+            <ProductsSec />
+
             {/* <ItemsPage /> */}
 
-            <ProductsSec />
+            {/* <div className="product-heading">
+                <h2 className='product-list'>Product-List</h2>
+            </div>
+            <section className="item-container" ref={itemRef}>
+                <div className="item-grid">
+                    {items &&
+                        items.map(item => (
+                            <div className="item">
+                                <Item key={item.id} item={item} />
+                            </div>
+                        ))}
+                </div>
+            </section> */}
+
 
             <SupportFms handleShopNowClick={handleShopNowClick} />
 
             <div className="product-heading">
-                <h2 className='product-list'>Best Sell</h2>
+                <h2 className='product-list'>Products</h2>
             </div>
 
             <div className="cat-links">
@@ -80,12 +110,13 @@ const Home = ({ showFooter, subtotal }) => {
 
             <ProductsSec />
 
-            {/* <ProductsSec /> */}
-
             <ServiceBar />
 
             <section className="new-latest">
-                <p className="n-l">New Latest</p>
+            <div className="product-heading">
+                <h2 className='product-list'>New Latest</h2>
+            </div>
+                {/* <p className="n-l">New Latest</p> */}
                 <div className="new-latest-img">
                     <img src={CImg1} alt="" className="c-img" />
                     <img src={CImg2} alt="" className="c-img" />
@@ -99,3 +130,7 @@ const Home = ({ showFooter, subtotal }) => {
 };
 
 export default Home;
+
+
+
+            {/* <PageFooter showFooter={showFooter} subtotal={subtotal} /> */}

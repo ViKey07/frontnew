@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import API from '../API';
 import { getCarts, getSubtotal } from '../reducks/carts/selectors';
 import { fetchCarts } from '../reducks/carts/operations';
 import { addOrder } from '../reducks/order/operations';
 import { push } from 'connected-react-router';
-// import PaymentsForm from './PaymentsForm';
-// const api = new API();
-// import API from '../API';
+// import logo from '../assets/img/cooltees-logo.png';4
+const api = new API();
 
-
-const Shipping = ({item, size, color}) => {
+const Shipping = () => {
     const selector = useSelector(state => state);
     const dispatch = useDispatch();
 
@@ -27,16 +26,13 @@ const Shipping = ({item, size, color}) => {
 
     useEffect(() => {
         dispatch(fetchCarts());
-    }, [dispatch]);
+    }, []);
 
     useEffect(() => {
         let arr = [];
-        if (carts !== undefined && carts.length > 0) {
+        if (carts != undefined && carts.length > 0) {
             for (let key in carts) {
                 arr.push(carts[key].quantity);
-                // arr.push(carts[key].size);
-                // arr.push(carts[key].color);
-
             }
             let sum = arr.reduce(function (a, b) {
                 return a + b;
@@ -82,7 +78,7 @@ const Shipping = ({item, size, color}) => {
             city: city,
             state: state,
             postal_code: pincode,
-            country: 'India',
+            country: 'US',
             telephone: phone
         };
         dispatch(addOrder(params));
@@ -105,11 +101,9 @@ const Shipping = ({item, size, color}) => {
                             {carts &&
                                 carts.map(cart => (
                                     <tr>
-                                        <td className="td-item">{cart.item.name}</td>
-                                        <td className="td-quantity">{cart.quantity}</td>
-                                        <td className="td-price">{cart.item.price}</td>
-                                        <td className="td-size">{cart.item.size}</td>
-
+                                        <td class="td-item">{cart.item.name}</td>
+                                        <td class="td-quantity">{cart.quantity}</td>
+                                        <td class="td-price">{cart.item.price}</td>
                                     </tr>
                                 ))}
                             <tr class="border">

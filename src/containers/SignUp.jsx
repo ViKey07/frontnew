@@ -38,12 +38,13 @@ const SignUp = () => {
                     <div class="popup-preview">
                         <span onClick={closeButton}>
                             <a href="/">
-                                <img src={CrossX} class="close" alt=''/>{' '}
+                                <img src={CrossX} class="close" />{' '}
                             </a>
                         </span>
                         <div class="input">
                             <div className="heading-sign-in">
                                 <h2>Create an account and discover the benefits</h2>
+                                {/* <p> Sign Up to Refresh Cool Drinks</p> */}
                             </div>
                             <div className="input-feilds">
                                 <input
