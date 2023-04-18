@@ -10,8 +10,6 @@ var baseURL;
 //   baseURL = process.env.REACT_APP_API_BASE_URL;
 // } else
 baseURL = "http://127.0.0.1:8000/";
-// baseURL = "https://backnew.vikey07.repl.co";
-
 
 const API_URL = 'http://127.0.0.1:8000/';
 
@@ -148,22 +146,6 @@ export default class API {
             });
         return savedCart;
     };
-
-
-    // updateCart = async (cartId, size, color) => {
-    //     const savedCart = await api
-    //       .put(`/carts/${cartId}/update/`, {
-    //         size: size,
-    //         color: color
-    //       })
-    //       .then(response => {
-    //         return response.data;
-    //       })
-    //       .catch(error => {
-    //         throw new Error(error);
-    //       });
-    //     return savedCart;
-    //   };
       
 
     deleteCarts = async cart_id => {
@@ -193,25 +175,6 @@ export default class API {
             });
         return order;
     };
-
-    // orderAdd = async (params = {}) => {
-    //     const { item, quantity, size, color } = params; // assuming you have access to size and color information
-    
-    //     const order = await api
-    //         .post('/orders/add/', {
-    //             item: item.id,
-    //             quantity: quantity,
-    //             size: size, // adding size property
-    //             color: color // adding color property
-    //         })
-    //         .then(response => {
-    //             return response.data;
-    //         })
-    //         .catch(error => {
-    //             throw new Error(error);
-    //         });
-    //     return order;
-    // };
     
 
     ///////////////////////////////////////////
