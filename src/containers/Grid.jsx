@@ -11,12 +11,12 @@ const CustomCategoryButtons = ({ handleShopNowClick }) => {
   return (
     <div className="custom-category-buttons-container">
       <div className="custom-category-1">
-        <button className="cat-but" onClick={handleShopNowClick}>
+        <a className="cat-but" href='/items'>
         <img className='category-img' src={category1Image} alt="Category 1" />
         <div className="c-b">
             <p className='category-button' >Hoodies, Tshirts and Sweatshirts</p>
         </div>
-        </button>
+        </a>
       </div>
       <div className="custom-category-2-3">
         <div className="custom-category-2">

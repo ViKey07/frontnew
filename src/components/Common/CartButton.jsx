@@ -10,7 +10,7 @@ const CartButton = ({ onCartButtonClick }) => {
 
   return (
     <div className="floating-cart-button" onClick={handleCartButtonClick}>
-      <img className="cart-icon" src={cart}></img>
+      <img className="cart-icon" src={cart} alt='Cart img'></img>
     </div>
   );
 };

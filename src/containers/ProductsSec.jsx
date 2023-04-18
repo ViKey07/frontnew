@@ -1,12 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Hoodie from '../assets/img/Asset 81.png';
 import Tshirt from '../assets/img/800/Asset 612.png';
 import Diary from '../assets/img/Artboard 12.png';
 import Mug from '../assets/img/800/Asset 71.png';
 import '../containers/ProductsSec.css';
+import '../components/Common/Item'
 
-function ProductsSec() {
+function ProductsSec({ clickAddCart }) {
   return (
     <>
     
@@ -25,6 +26,10 @@ function ProductsSec() {
                                     <p id='dot-red'>&#x2022;</p>
                                     <p id='dot-blue'>&#x2022;</p>
                                 </div>
+                                
+                                {/* <button className='add-cart-home-btn' onClick={clickAddCart}>
+                                    VIEW PRODUCTS
+                                </button> */}
                             </div>
                         </a>
                     </button>
@@ -42,6 +47,9 @@ function ProductsSec() {
                                     <p id='dot-red'>&#x2022;</p>
                                     <p id='dot-blue'>&#x2022;</p>
                                 </div>
+                                {/* <button className='add-cart-home-btn' onClick={clickAddCart}>
+                                    VIEW PRODUCTS
+                                </button> */}
                             </div>
                         </a>
                     </button>
@@ -59,6 +67,9 @@ function ProductsSec() {
                                     <p id='dot-red'>&#x2022;</p>
                                     <p id='dot-blue'>&#x2022;</p>
                                 </div>
+                                {/* <button className='add-cart-home-btn' onClick={clickAddCart}>
+                                    VIEW PRODUCTS
+                                </button> */}
                             </div>
                         </a>
                     </button>
@@ -76,6 +87,9 @@ function ProductsSec() {
                                     <p id='dot-red'>&#x2022;</p>
                                     <p id='dot-blue'>&#x2022;</p>
                                 </div>
+                                {/* <button className='add-cart-home-btn' onClick={clickAddCart}>
+                                    VIEW PRODUCTS
+                                </button> */}
                             </div>
                         </a>
                     </button>

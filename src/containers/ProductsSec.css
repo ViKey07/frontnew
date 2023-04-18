@@ -23,7 +23,7 @@
 }
 
 .img-bg {
-    /* background-color: #e0e0e0; */
+    background-color: #e0e0e0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -38,36 +38,84 @@
     margin: 0;
     padding: 0;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.5s ease;
+    transform: scale(1);
 }
 
 .item-cat-btn:hover {
-    transform: scale(1.1); 
+    transition: transform 0.5s ease;
+    transform: scale(1); 
 }
 
 .item-btn-link {
+    transition: transform 0.5s ease;;
     text-decoration: none;
+    transform: scale(1);
 }
 
 .item-cards {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    /* height: 105%; */
-    margin: 2em 0;
+    margin: 2em 0 0 0;
     padding: 0.5em;
-    /* box-shadow: 5px 5px 15px silver; */
+    box-shadow: 5px 5px 15px silver;
+    /* border-right: 1px solid #e7e7e7;
+    border-left: 1px solid #e7e7e7; */
+    height: 50vh;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+    
 }
+
+.item-cards:hover {
+    border: none;
+    transition: transform 0.5s ease;
+    transform: scale(1.1);
+}
+
+.add-cart-home-btn {
+    display: none;
+    transition: transform 0.5s ease;
+}
+
+.add-cart-home-btn:hover {
+    transition: transform 0.5s ease;
+}
+
+.item-cards:hover .add-cart-home-btn{
+    display: block;
+    width: 106%;
+    padding: 1em;
+    border: none;
+    background-color: maroon;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.5s ease;
+}
+
+
+
+
+
+/* .add-cart-home-btn:hover {
+    
+} */
 
 .item-title {
     text-align: center;
     font-weight: bold;
-    font-size: small;
+    font-size: medium;
     margin: 1em 0 0 0;
+    color: #4e4e4e;
 }
+
+.item-title:active {
+    color: inherit;
+}
+  
 
 .item-price {
     color: blue;
@@ -82,19 +130,19 @@
 
 #dot-green {
     
-    font-size: x-large;
+    font-size: xx-large;
     color: green;
 }
 
 #dot-red {
     
-    font-size: x-large;
+    font-size: xx-large;
     color: red;
 }
 
 #dot-blue {
     
-    font-size: x-large;
+    font-size: xx-large;
     color: rgb(35, 140, 182);
 }
 

@@ -9,8 +9,11 @@ var baseURL;
 // ) {
 //   baseURL = process.env.REACT_APP_API_BASE_URL;
 // } else
-// baseURL = "https://backend-eric.herokuapp.com/";
-baseURL = "https://backnew.vikey07.repl.co";
+baseURL = "http://127.0.0.1:8000/";
+// baseURL = "https://backnew.vikey07.repl.co";
+
+
+const API_URL = 'http://127.0.0.1:8000/';
 
 
 
@@ -254,8 +257,37 @@ export default class API {
             });
         return response;
     };
+
+    
 }
-
-
   
+
+export const createOrder = async (amount) => {
+    const response = await fetch(`${API_URL}/orders/create_order/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'X-CSRFToken': getCookie('csrftoken'),  // replace with your own CSRF token getter function
+      },
+      body: new URLSearchParams({
+        'amount': amount,
+      }).toString(),
+    });
+    const data = await response.json();
+    return data.order_id;
+  };
+  
+  // helper function to get the CSRF token from cookies
+  const getCookie = (name) => {
+    if (!document.cookie) {
+      return null;
+    }
+    const xsrfCookies = document.cookie.split(';')
+      .map(c => c.trim())
+      .filter(c => c.startsWith(name + '='));
+    if (xsrfCookies.length === 0) {
+      return null;
+    }
+    return decodeURIComponent(xsrfCookies[0].split('=')[1]);
+  };
   

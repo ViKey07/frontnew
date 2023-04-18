@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 5%;
   }
   
   .custom-category-1,
@@ -20,14 +20,16 @@
   }
   
   .category-img {
-    width: 250px;
+    width: 315px;
+    box-shadow: 5px 5px 15px silver;
+    padding: 0.5em;
   }
 
   .custom-category-1:hover,
   .custom-category-2:hover,
   .custom-category-3:hover,
   .custom-category-4:hover {
-    transition: transform 0.5s;
+    transition: transform 0.5s ease;
     transform: scale(1.1);
   }
 
@@ -50,25 +52,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -150%);
-    padding: 0 0.3em;
+    padding: 0.5em 1em;
     border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
     cursor: pointer;
     font-weight: 700;
     background-color: #fff;
-  }
-
-  .category-button:hover {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -150%);
-    padding: 0 0.3em;
-    border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    background-color: maroon;
-    color: white;
   }
 
   .carousel button.arrow-next {
@@ -104,13 +93,6 @@
       position: relative;
       top: -40px;
     }
-  
-    /* .category-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    } */
 
     .category-button:hover {
       position: absolute;

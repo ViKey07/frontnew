@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import Item from '../components/Common/Item';
+import React, { useEffect } from 'react';
 import { fetchItems } from '../reducks/items/operations';
 import { getItems } from '../reducks/items/selectors';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,17 +12,18 @@ import CImg2 from '../assets/img/clg_img2.png';
 import CImg3 from '../assets/img/clg_img3.png';
 import NewsLetter from './SignLetter.jsx';
 import ServiceBar from './ServiceBar';
-import ItemsPage from './ItemsPage';
 import ProductsSec from './ProductsSec';
-// import Footer from './components/Common/Footer.jsx';
-// import PageFooter from '../components/Common/Footer';
+// import Welcome from './Welcome';
+// import Item from '../components/Common/Item';
+// import ItemsPage from './ItemsPage';
+
 
 
 const Home = ({ showFooter, subtotal }) => {
     const selector = useSelector(state => state);
     const dispatch = useDispatch();
     const items = getItems(selector);
-    const itemRef = useRef(null);
+    // const itemRef = useRef(null);
 
     useEffect(() => {
         dispatch(fetchItems());
@@ -31,7 +31,7 @@ const Home = ({ showFooter, subtotal }) => {
             dispatch(fetchCarts());
             console.log(items);
         }
-    }, []);
+    }, [dispatch, items]);
 
     function handleShopNowClick() {
         // itemRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -40,6 +40,7 @@ const Home = ({ showFooter, subtotal }) => {
 
     return (
         <>
+            {/* <Welcome /> */}
             <section class="main-image">
                 <img src={MainImage} alt="main-img" />
                 <div className="shop-btn">
@@ -51,25 +52,11 @@ const Home = ({ showFooter, subtotal }) => {
 
             <CustomCategoryButtons handleShopNowClick={handleShopNowClick} />
 
-            {/* <div className="product-heading">
-                <h2 className='product-list'>Product-List</h2>
-            </div>
-            <section className="item-container" ref={itemRef}>
-                <div className="item-grid">
-                    {items &&
-                        items.map(item => (
-                            <div className="item">
-                                <Item key={item.id} item={item} />
-                            </div>
-                        ))}
-                </div>
-            </section> */}
-
-            {/* <ItemsPage /> */}
-
             <div className="product-heading">
                 <h2 className='product-list'>Best Selling</h2>
             </div>
+
+            {/* <ItemsPage /> */}
 
             <ProductsSec />
 
@@ -112,7 +99,3 @@ const Home = ({ showFooter, subtotal }) => {
 };
 
 export default Home;
-
-
-
-            {/* <PageFooter showFooter={showFooter} subtotal={subtotal} /> */}
