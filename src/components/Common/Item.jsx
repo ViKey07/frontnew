@@ -3,7 +3,6 @@
 // import { addCart, increaseCart, decreaseCart } from '../../reducks/carts/operations';
 // import { getCarts, getSubtotal } from '../../reducks/carts/selectors';
 // import { push } from 'connected-react-router';
-// // import PageFooter from './Footer'
 
 // const Item = ({ item }) => {
 //     const selector = useSelector(state => state);
@@ -15,11 +14,7 @@
 
 //     useEffect(() => {
 //         if (carts !== undefined && carts.length > 0) {
-//             console.log('carts');
-//             console.log(carts);
 //             let matchedCarts = carts.filter(cart => cart.item.id === item.id);
-//             console.log('matchedCarts');
-//             console.log(matchedCarts);
 //             if (matchedCarts.length > 0) {
 //                 setParticularCart(matchedCarts[0]);
 //             } else {
@@ -41,6 +36,7 @@
 //     const clickMinusCart = () => {
 //         dispatch(decreaseCart(particularCart.id));
 //     };
+
 //     return (
 //         <>
 //             <div className="item-background">
@@ -53,16 +49,34 @@
 //                     <p className='i-title'>{item.name}</p>
 //                     <p className='i-price'>${item.price}</p>
 //                 </div>
+//                 <div className="item-details">
+//                     <div className="item-color">
+//                         <label htmlFor="color">Color:</label>
+//                         <select id="color">
+//                             <option value="red">Red</option>
+//                             <option value="green">Green</option>
+//                             <option value="blue">Blue</option>
+//                         </select>
+//                     </div>
+//                     <div className="item-size">
+//                         <label htmlFor="size">Size:</label>
+//                         <select id="size">
+//                             <option value="small">Small</option>
+//                             <option value="medium">Medium</option>
+//                             <option value="large">Large</option>
+//                         </select>
+//                     </div>
+//                 </div>
 //                 {particularCart && particularCart.quantity > 0 ? (
-//                     <div class="added-cart">
+//                     <div className="added-cart">
 //                         <div className="ad-c-b">
-//                         <span id="minus" onClick={clickMinusCart}>
-//                             －
-//                         </span>
-//                         <span id="count">{particularCart.quantity}</span>
-//                         <span id="plus" onClick={clickPlusCart}>
-//                             +
-//                         </span>
+//                             <span id="minus" onClick={clickMinusCart}>
+//                                 －
+//                             </span>
+//                             <span id="count">{particularCart.quantity}</span>
+//                             <span id="plus" onClick={clickPlusCart}>
+//                                 +
+//                             </span>
 //                         </div>
 //                     </div>
 //                 ) : (
@@ -71,13 +85,13 @@
 //                     </button>
 //                 )}
 //             </div>
-
-//             {/* <PageFooter showFooter={showFooter} subtotal={subtotal} /> */}
 //         </>
 //     );
 // };
 
 // export default Item;
+
+
 
 
 import React, { useEffect, useState } from 'react';
@@ -131,24 +145,26 @@ const Item = ({ item }) => {
                     <p className='i-title'>{item.name}</p>
                     <p className='i-price'>${item.price}</p>
                 </div>
-                <div className="item-details">
-                    <div className="item-color">
-                        <label htmlFor="color">Color:</label>
-                        <select id="color">
-                            <option value="red">Red</option>
-                            <option value="green">Green</option>
-                            <option value="blue">Blue</option>
-                        </select>
+                {item.size && item.color ? (
+                    <div className="item-details">
+                        <div className="item-color">
+                            <label htmlFor="color">Color:</label>
+                            <select id="color">
+                                <option value="red">Red</option>
+                                <option value="green">Green</option>
+                                <option value="blue">Blue</option>
+                            </select>
+                        </div>
+                        <div className="item-size">
+                            <label htmlFor="size">Size:</label>
+                            <select id="size">
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                        </div>
                     </div>
-                    <div className="item-size">
-                        <label htmlFor="size">Size:</label>
-                        <select id="size">
-                            <option value="small">Small</option>
-                            <option value="medium">Medium</option>
-                            <option value="large">Large</option>
-                        </select>
-                    </div>
-                </div>
+                ) : null}
                 {particularCart && particularCart.quantity > 0 ? (
                     <div className="added-cart">
                         <div className="ad-c-b">
@@ -172,7 +188,3 @@ const Item = ({ item }) => {
 };
 
 export default Item;
-
-
-
-

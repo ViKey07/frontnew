@@ -59,8 +59,6 @@ const Home = ({ showFooter, subtotal }) => {
 
             <Carousel />
 
-            
-
             <div className="product-heading">
                 <h2 className='product-list'>Categories</h2>
             </div>
@@ -73,23 +71,6 @@ const Home = ({ showFooter, subtotal }) => {
 
             <ProductsSec />
 
-            {/* <ItemsPage /> */}
-
-            {/* <div className="product-heading">
-                <h2 className='product-list'>Product-List</h2>
-            </div>
-            <section className="item-container" ref={itemRef}>
-                <div className="item-grid">
-                    {items &&
-                        items.map(item => (
-                            <div className="item">
-                                <Item key={item.id} item={item} />
-                            </div>
-                        ))}
-                </div>
-            </section> */}
-
-
             <SupportFms handleShopNowClick={handleShopNowClick} />
 
             <div className="product-heading">
@@ -97,15 +78,13 @@ const Home = ({ showFooter, subtotal }) => {
             </div>
 
             <div className="cat-links">
-                {/* <ul className="navbar-links"> */}
-                    <li><a className='nav-l-2' href="/items">All</a></li>
-                    <li><a className='nav-l-2' href="/items">Apparel</a></li>
-                    <li><a className='nav-l-2' href="/items">Stationary</a></li>
-                    <li><a className='nav-l-2' href="/items">Mugs</a></li>
-                    <li><a className='nav-l-2' href="/items">Bottles</a></li>
-                    <li><a className='nav-l-2' href="/items">Rings</a></li>
-                    <li><a className='nav-l-2-b' href="/items">Bands</a></li>
-                {/* </ul> */}
+                <li><a className='nav-l-2' href="/items">All</a></li>
+                <li><a className='nav-l-2' href="/items">Apparel</a></li>
+                <li><a className='nav-l-2' href="/items">Stationary</a></li>
+                <li><a className='nav-l-2' href="/items">Mugs</a></li>
+                <li><a className='nav-l-2' href="/items">Bottles</a></li>
+                <li><a className='nav-l-2' href="/items">Rings</a></li>
+                <li><a className='nav-l-2-b' href="/items">Bands</a></li>
             </div>
 
             <ProductsSec />
@@ -113,10 +92,10 @@ const Home = ({ showFooter, subtotal }) => {
             <ServiceBar />
 
             <section className="new-latest">
-            <div className="product-heading">
-                <h2 className='product-list'>New Latest</h2>
-            </div>
-                {/* <p className="n-l">New Latest</p> */}
+                <div className="product-heading">
+                    <h2 className='product-list'>New Latest</h2>
+                </div>
+
                 <div className="new-latest-img">
                     <img src={CImg1} alt="" className="c-img" />
                     <img src={CImg2} alt="" className="c-img" />

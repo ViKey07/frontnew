@@ -11,8 +11,8 @@ const CustomCategoryButtons = ({ handleShopNowClick }) => {
   return (
     <div className="custom-category-buttons-container">
       <div className="custom-category-1">
-        <button className="cat-but" onClick={handleShopNowClick}>
-        <img className='category-img' src={category1Image} alt="Category 1" />
+      <button className="cat-but" onClick={handleShopNowClick}>
+        <img className='category-img1' src={category1Image} alt="Category 1" />
         <div className="c-b">
             <p className='category-button' >Hoodies, Tshirts and Sweatshirts</p>
         </div>
@@ -21,7 +21,7 @@ const CustomCategoryButtons = ({ handleShopNowClick }) => {
       <div className="custom-category-2-3">
         <div className="custom-category-2">
         <button className="cat-but" onClick={handleShopNowClick}>
-          <img className='category-img' src={category2Image} alt="Category 2" />
+          <img className='category-img2' src={category2Image} alt="Category 2" />
           <div className="c-b">
             <p className='category-button' >Diaries, Posters and Mousepads</p>
         </div>
@@ -29,7 +29,7 @@ const CustomCategoryButtons = ({ handleShopNowClick }) => {
         </div>
         <div className="custom-category-3">
         <button className="cat-but" onClick={handleShopNowClick}>
-          <img className='category-img' src={category3Image} alt="Category 3" />
+          <img className='category-img3' src={category3Image} alt="Category 3" />
           <div className="c-b">
             <p className='category-button' >Rings and Bands</p>
         </div>
@@ -38,7 +38,7 @@ const CustomCategoryButtons = ({ handleShopNowClick }) => {
       </div>
       <div className="custom-category-4">
       <button className="cat-but" onClick={handleShopNowClick}>
-        <img className='category-img' src={category4Image} alt="Category 4" />
+        <img className='category-img4' src={category4Image} alt="Category 4" />
         <div className="c-b">
             <p className='category-button'>Bottles, Mugs and Flags</p>
         </div>

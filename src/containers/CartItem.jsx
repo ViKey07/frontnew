@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart, increaseCart, decreaseCart } from '../reducks/carts/operations';
 import { getCarts, getSubtotal } from '../reducks/carts/selectors';
+import GiftImg from '../../src/assets/img/gift_logo.png';
 // import Item from '../components/Common/Item'
 
 const CartItem = ({ cart, quantity, cartId }) => {
@@ -11,6 +12,7 @@ const CartItem = ({ cart, quantity, cartId }) => {
     const subtotal = getSubtotal(selector);
     const [selectedSize, setSelectedSize] = useState(cart.size);
     const [selectedColor, setSelectedColor] = useState(cart.color);
+    const [giftboxAdded, setGiftboxAdded] = useState(false);
 
     const clickPlusCart = () => {
         dispatch(increaseCart(cartId));
@@ -33,6 +35,14 @@ const CartItem = ({ cart, quantity, cartId }) => {
         setSelectedColor(event.target.value);
     };
 
+    const handleAddGiftbox = () => {
+        setGiftboxAdded(true);
+    };
+
+    const handleRemoveGiftbox = () => {
+        setGiftboxAdded(false);
+    };
+
     return (
         <>
 
@@ -44,9 +54,29 @@ const CartItem = ({ cart, quantity, cartId }) => {
             <div className="cart-item-name">
                 <p className='c-i-a'>{cart.name}</p>
                 <p className="c-i-a-s">Style: Full Sleves</p>
-                <div className="giftbox">
-                    {/* <img src="" alt={Gift} className="gift" /> */}
+                {/* <div className="giftbox">
                     <p className="gift-txt">YBC GIFT BOX ADDED</p>
+                </div> */}
+                <div className="giftbox">
+                    
+                        {!giftboxAdded ? (
+                            <a onClick={handleAddGiftbox} className="add-giftbox-btn">
+                                <img className='giftimg' src={GiftImg} alt="" />
+                                Add YBC GIFT BOX
+                            </a>
+                        ) : (
+                            <div className="giftbox-added">
+                                <div className="gb-a">
+                                <p className="gift-txt">
+                                <img className='giftimg' src={GiftImg} alt="" />
+                                    YBC GIFT BOX Added</p>
+                                </div>
+                                <a onClick={handleRemoveGiftbox} className="remove-giftbox-link">
+                                    Remove Giftbox
+                                </a>
+                            </div>
+                        )}
+                        
                 </div>
             </div>
         </div>

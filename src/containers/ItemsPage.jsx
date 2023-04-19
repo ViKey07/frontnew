@@ -24,20 +24,21 @@ function ItemsPage() {
 
   return (
     <>
-    <div className="product-heading">
-                <h2 className='product-list'>Product-List</h2>
+        <div className="product-heading-itempage">
+            <h2 className='product-list-itempage'>Product-List</h2>
+        </div>
+
+        <section className="item-container" ref={itemRef}>
+            <div className="item-grid">
+                {items &&
+                    items.map(item => (
+                        <div className="item">
+                            <Item key={item.id} item={item} />
+                        </div>
+                    ))}
             </div>
-            <section className="item-container" ref={itemRef}>
-                <div className="item-grid">
-                    {items &&
-                        items.map(item => (
-                            <div className="item">
-                                <Item key={item.id} item={item} />
-                            </div>
-                        ))}
-                </div>
-            </section>
-            </>
+        </section>
+    </>
   )
 }
 
