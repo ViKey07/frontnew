@@ -30,7 +30,7 @@ const Shipping = () => {
 
     useEffect(() => {
         let arr = [];
-        if (carts != undefined && carts.length > 0) {
+        if (carts !== undefined && carts.length > 0) {
             for (let key in carts) {
                 arr.push(carts[key].quantity);
             }
@@ -68,6 +68,9 @@ const Shipping = () => {
     const inputState = e => {
         setState(e.target.value);
     };
+
+    
+    
 
     const orderButton = e => {
         let params = {

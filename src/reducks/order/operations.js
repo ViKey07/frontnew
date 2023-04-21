@@ -12,7 +12,7 @@ export const addOrder = (params) => {
         dispatch(addOrderAction(order));
       })
       .catch((error) => {
-        alert("Failed to connect API to add cart");
+        alert("Fields cannot be empty");
         console.log(error);
       });
   };
