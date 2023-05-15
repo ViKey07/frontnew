@@ -11,7 +11,8 @@ var baseURL;
 // } else
 // baseURL = "https://backend-eric.herokuapp.com/";
 // baseURL = "https://backnewf.vikey07.repl.co";
-baseURL = "http://localhost:8000/";
+// baseURL = "http://localhost:8000/";
+baseURL = "https://backnewf-production.up.railway.app/";
 
 
 

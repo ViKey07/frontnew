@@ -1,7 +1,7 @@
 {
     "name": "frontend",
     "version": "0.1.0",
-    "homepage": "https://ved.k96.github.io/frontnew",
+    "homepage": "https://ViKey07.github.io/frontnew",
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.12.0",
